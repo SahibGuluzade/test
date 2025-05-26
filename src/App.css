@@ -1,38 +1,257 @@
-.App {
-  text-align: center;
+/* ===== Global Reset & Defaults ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-family: 'Bubblegum Sans', cursive;
+  font-size: 38px;
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ===== Header ===== */
+.Pageheader {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #090cb8, #ce471e);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ===== Search Input ===== */
+.SerachInput {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  left: 100px;
+  
+}
+
+input[type="text"] {
+  width: 35%;
+  height: 20px;
+  border-radius: 5px;
+  border: 0.5px solid grey;
+  font-size: 13px;
+  padding: 10px 0 10px 10px;
+  margin-right: 20px;
+}
+
+.search-btn {
+  width: 30%;
+  font-size: 13px;
+  padding: 5px 13px;
+  background-color: rgb(129, 18, 129);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* ===== FavoriteList Component (Default Styles) ===== */
+.FavoriteList {
+  border-radius: 7px;
+  width: 500px;
+  padding: 20px;
+  border: 1px solid  rgb(129, 18, 129);;
+}
+
+.favorite-movies-preview,
+.favorite-movies-view {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 15px;
+}
+
+.favorite-movie-item {
+  width: 100%;
+  position: relative;
+  padding: 10px 20px 10px 0;
+  border: 1px solid #ccc;
+  text-align: center;
+  border: none;
+}
+
+
+
+.movies-btn,
+.favorite-list-controls button {
+  background-color: rgb(129, 18, 129);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+
+.remove-btn {
+  margin-top: 10px;
+  padding: 2.5px 6.5px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  background: white;
+  border: 1px solid #e32f2f;
+  color: #e32f2f;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.remove-btn:hover {
+  background: #e32f2f;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.imdb-btn {
+  background: #f5c518;
+  border: none;
+  color: black;
+   margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movies-btn {
+  background: #0288d1;
+  border: none;
+  color: white;
+  margin-right: 16px;
 }
+
+.favorite-list-controls {
+  margin-top: 20px;
+}
+
+.favorite-list-controls input {
+  padding: 5px;
+  width: 100%;
+  margin-right: 10px;
+}
+
+
+.FavoriteList.favorite-view {
+  margin: 10px auto;
+  width: 80%;
+  text-align: center;
+}
+
+
+.movies-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;  
+  gap: 20px;
+}
+
+
+.movies-section {
+  flex: 3;
+
+}
+
+
+.favorites-section {
+  flex: 1;
+  max-width: 500px;
+}
+
+
+.MovieList {
+  margin-top: 20px;
+}
+
+.movie-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.movie-card {
+
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  border-radius: 7px;
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+}
+
+.movie-title {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.movie-year {
+  margin-bottom: 10px;
+  color: grey;
+}
+
+.favorite-btn {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #0288d1;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.favorite-btn,.load-more-btn,.movies-btn {
+  background-color:rgb(129, 18, 129); 
+}
+
+.load-more-btn {
+  color: white;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.movie-card{
+  border-color: #ce471e;
+}
+
+.FavoriteList{
+  width: 400px;
+  margin-top: 42px;
+ }
+
+ .favorite-list-controls{
+  margin-top: 50px;
+ }
+@media (max-width: 778px) {
+ .FavoriteList{
+  width: 300px;
+ }
+
+ 
+input[type="text"] {
+  width: 50%;
+ 
+}
+
+.search-btn {
+  width: 50%;
+  padding: 5px 10px;
+  margin-top: 5px;
+ 
+}
+}
+
